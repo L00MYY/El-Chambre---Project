@@ -8,6 +8,8 @@ class Sucursal:
         self._nombre = nombre
         self._direccion = direccion
         self._telefono = telefono
+        # si se elimina la sucursal, estos registros se eliminan, pero la
+        # MateriaPrima/Producto siguen existiendo en el sistema
         self._inventarioProductos: list[InventarioProducto] = []
         self._inventarioMateriaPrima: list[InventarioMateriaPrima] = []
 

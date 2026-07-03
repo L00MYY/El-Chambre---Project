@@ -1,13 +1,18 @@
 from datetime import date
 from DetalleVenta import DetalleVenta
+from Producto import Producto
+from Sucursal import Sucursal
 
 class Venta:
-    def __init__(self, idVenta:int, total:float, fecha:date, metodoPago:str, idDetVenta:int, cantidad:float, subtotal:float):
+    
+    def __init__(self, idVenta: int, fecha: date, metodoPago: str, idSucursal: int):
         self.idVenta = idVenta
-        self._total = total
-        self.fechaVenta=fecha
-        self.metodoPago= metodoPago
-        self._detalleVenta = DetalleVenta(idDetVenta, cantidad, subtotal)
+        self._total = 0.0
+        self.fechaVenta = fecha
+        self.metodoPago = metodoPago
+        self.idSucursal = idSucursal  # SUC-02
+        self._detalleVenta: list[DetalleVenta] = []
+
     
     def calcularTotalVenta():
         pass
