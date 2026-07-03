@@ -3,14 +3,22 @@ from InventarioProducto import InventarioProducto
 
 
 class Sucursal:
-    def __init__(self, idSucursal:int, nombre:str, dirreccion:str, telefono:str, inventarioProductos:InventarioProducto,inventarioMateriaPrima:InventarioMateriaPrima):
-        self.idSucursal= idSucursal
+    def __init__(self, idSucursal: int, nombre: str, direccion: str, telefono: str):
+        self.idSucursal = idSucursal
         self._nombre = nombre
-        self._direccion = dirreccion
+        self._direccion = direccion
         self._telefono = telefono
-        self._inventarioProductos = list[inventarioProductos]
-        self._inventarioMateriaPrima= list[inventarioMateriaPrima]
+        self._inventarioProductos: list[InventarioProducto] = []
+        self._inventarioMateriaPrima: list[InventarioMateriaPrima] = []
 
-    
-    def obtenerInventario():
+    def agregarInventarioMateriaPrima(self, inventario: InventarioMateriaPrima):
+        pass
+
+    def agregarInventarioProducto(self, inventario: InventarioProducto):
+        pass
+
+    def buscarInventarioMateriaPrima(self, idMateriaPrima: int) -> InventarioMateriaPrima | None:
+        pass
+
+    def obtenerInventario(self):
         pass

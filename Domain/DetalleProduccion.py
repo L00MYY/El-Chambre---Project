@@ -1,4 +1,8 @@
 class DetalleProduccion:
-    def __init__(self, idDetProduccion:int, cantidadProduccion:float):
+    def __init__(self, idDetProduccion: int, idProducto: int, cantidadProducida: float):
         self.idDetProduccion = idDetProduccion
-        self._cantidadProducida = cantidadProduccion
+        self.idProducto = idProducto
+        self._cantidadProducida = cantidadProducida
+
+    def obtenerCantidadProducida(self) -> float:
+        pass

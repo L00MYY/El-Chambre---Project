@@ -1,17 +1,20 @@
 from abc import ABC, abstractmethod
 
+
 class Inventario(ABC):
-    def __init__(self, idInventario:int, stockActual:int, stockMinimo:int):
+    def __init__(self, idInventario: int, stockActual: float, stockMinimo: float):
         self.idInventario = idInventario
         self.stockActual = stockActual
         self.stockMinimo = stockMinimo
-    
+
     @abstractmethod
-    def actualizarStock(cantidad:float):
+    def actualizarStock(self, cantidad: float):
         pass
+
     @abstractmethod
-    def validarStockSuficente(cantidadNecesaria:float)->bool:
-        pass    
+    def validarStockSuficente(self, cantidadNecesaria: float) -> bool:
+        pass
+
     @abstractmethod
-    def validarAlerta()->bool:
+    def validarAlerta(self) -> bool:
         pass

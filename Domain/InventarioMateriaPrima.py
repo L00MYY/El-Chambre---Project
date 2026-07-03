@@ -1,14 +1,15 @@
 from Inventario import Inventario
+
 class InventarioMateriaPrima(Inventario):
-    def __init__(self, idInventario, stockActual, stockMinimo):
+    def __init__(self, idInventario: int, idMateriaPrima: int, stockActual: float, stockMinimo: float):
         super().__init__(idInventario, stockActual, stockMinimo)
-    
-        
-    def actualizarStock(cantidad:float):
+        self.idMateriaPrima = idMateriaPrima
+
+    def actualizarStock(self, cantidad: float):
         pass
 
-    def validarStockSuficente(cantidadNecesaria:float)->bool:
+    def validarStockSuficente(self, cantidadNecesaria: float) -> bool:
         pass
-      
-    def validarAlerta()->bool:
+
+    def validarAlerta(self) -> bool:
         pass
