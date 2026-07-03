@@ -8,8 +8,6 @@ class Producto:
         self.nombre = nombre
         self.precio = precio
         self.descripcion = descripcion
-        # Antes solo admitía UN DetalleReceta; ahora es una lista, porque
-        # un producto normalmente necesita varias materias primas.
         self.__receta = receta if receta is not None else []
 
     def agregarIngrediente(self, detalleReceta: DetalleReceta):
