@@ -4,7 +4,7 @@ from InventarioProducto import InventarioProducto
 
 class Sucursal:
     def __init__(self, idSucursal: int, nombre: str, direccion: str, telefono: str):
-        self.idSucursal = idSucursal
+        self._idSucursal = idSucursal
         self._nombre = nombre
         self._direccion = direccion
         self._telefono = telefono
