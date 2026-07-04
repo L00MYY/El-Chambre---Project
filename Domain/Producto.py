@@ -2,7 +2,7 @@ from DetalleReceta import DetalleReceta
 
 
 class Producto:
-    def __init__(self, idProducto: int, nombre: str, precio: float, descripcion: str, receta: list[DetalleReceta] = None):
+    def __init__(self, idProducto: int, nombre: str, precio: float, descripcion: str, receta: list[DetalleReceta]):
         self.idProducto = idProducto
         self.nombre = nombre
         self.precio = precio
