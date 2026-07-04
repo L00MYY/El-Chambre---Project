@@ -17,10 +17,16 @@ class Sucursal:
         pass
 
     def agregarInventarioProducto(self, inventario: InventarioProducto):
-        pass
+        self._inventarioProductos.append(inventario)
 
     def buscarInventarioMateriaPrima(self, idMateriaPrima: int) -> InventarioMateriaPrima | None:
         pass
+
+    def buscarInventarioProducto(self, idProducto: int) -> InventarioProducto | None:
+        for inventario in self._inventarioProductos:
+            if inventario.idProducto == idProducto:
+                return inventario
+        return None
 
     def obtenerInventario(self):
         pass
