@@ -7,7 +7,7 @@ class Producto:
         self.nombre = nombre
         self.precio = precio
         self.descripcion = descripcion
-        self.__receta = receta if receta is not None else []
+        self.__receta = receta
 
     @property
     def precio(self):
