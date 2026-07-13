@@ -14,7 +14,7 @@ class Produccion:
 
 
     def validarMateriaPrima(self, producto: Producto, sucursal: Sucursal) -> bool:
-        cantidadProducida = self._detallesDeProduccion.obtenerCantidadProducid()
+        cantidadProducida = self._detallesDeProduccion.obtenerCantidadProducida()
         for ingrediente in producto.obtenerReceta():
             necesidadTotal = cantidadProducida * ingrediente.obtenerCantidadUsada()
             inventarioMP = sucursal.buscarInventarioMateriaPrima(ingrediente.obtenerIdMateriaPrima())
