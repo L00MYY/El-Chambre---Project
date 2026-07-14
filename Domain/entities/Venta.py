@@ -1,7 +1,7 @@
 from datetime import date
-from DetalleVenta import DetalleVenta
-from Producto import Producto
-from Sucursal import Sucursal
+from .DetalleVenta import DetalleVenta
+from .Producto import Producto
+from .Sucursal import Sucursal
 
 class Venta:
     

@@ -1,5 +1,5 @@
-from InventarioMateriaPrima import InventarioMateriaPrima
-from InventarioProducto import InventarioProducto
+from .InventarioMateriaPrima import InventarioMateriaPrima
+from .InventarioProducto import InventarioProducto
 
 
 class Sucursal:

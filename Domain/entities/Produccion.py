@@ -1,7 +1,7 @@
 from datetime import date
-from DetalleProduccion import DetalleProduccion
-from Producto import Producto
-from Sucursal import Sucursal
+from .DetalleProduccion import DetalleProduccion
+from .Producto import Producto
+from .Sucursal import Sucursal
 
 class Produccion:
     def __init__(self, idProduccion: int, fechaProduccion: date, observacion: str, idSucursal: int):

@@ -1,4 +1,4 @@
-from Inventario import Inventario
+from .Inventario import Inventario
 
 class InventarioMateriaPrima(Inventario):
     def __init__(self, idInventario: int, idMateriaPrima: int, stockActual: float, stockMinimo: float):

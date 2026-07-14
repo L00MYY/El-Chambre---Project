@@ -1,4 +1,4 @@
-from Inventario import Inventario
+from .Inventario import Inventario
  
  
 class InventarioProducto(Inventario):

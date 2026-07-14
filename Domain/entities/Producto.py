@@ -1,4 +1,4 @@
-from DetalleReceta import DetalleReceta
+from .DetalleReceta import DetalleReceta
 
 
 class Producto:
