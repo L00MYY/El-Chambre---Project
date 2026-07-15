@@ -35,10 +35,8 @@ tests/
 pip install -r requirements.txt
 ```
 
-## Próximos pasos
+## Setup de la base de datos local
 
-1. Completar los métodos pendientes del dominio.
-2. Implementar servicios de aplicación para ventas, inventario y producción.
-3. Implementar repositorios SQLite.
-4. Crear scripts para preparar y poblar la base de datos local.
-5. Documentar pruebas manuales y comandos de uso.
+```bash
+python scripts/init_db.py
+```
