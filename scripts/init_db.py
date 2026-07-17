@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS Materia_prima (
     id_materia INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL CHECK (length(trim(nombre)) > 0),
     unidad_medida TEXT NOT NULL CHECK (length(trim(unidad_medida)) > 0),
+    costo_unitario NUMERIC,
     descripcion TEXT
 );
 
