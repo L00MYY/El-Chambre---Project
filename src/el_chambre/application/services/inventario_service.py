@@ -13,7 +13,7 @@ llamarlo — ellos modifican inventarios dentro de su propia unidad de
 trabajo para no partir la transacción en dos.
 """
 
-from el_chambre.application.interfaces.exceptions import (
+from el_chambre.application.exceptions.exceptions import (
     ValidationError,
     NotFoundError,
     ConflictError,
