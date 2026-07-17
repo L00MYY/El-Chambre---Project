@@ -34,9 +34,6 @@ class Producto:
 
     def esProducible(self) -> bool:
         return len(self.__receta) > 0
-
-    def calcularCostoProduccion(self):
-        pass
     
     def calcularCostoProduccion(self, catalogoMateriaPrima: dict) -> float:
         costoTotal = 0.0
