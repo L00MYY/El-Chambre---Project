@@ -13,8 +13,7 @@ class Produccion:
         self._detallesDeProduccion: list[DetalleProduccion] = []
 
 
-    def validarMateriaPrima(self, producto: Producto, sucursal: Sucursal) -> bool:
-        cantidadProducida = self._detallesDeProduccion.obtenerCantidadProducida()
+    def validarMateriaPrima(self, producto: Producto, cantidadProducida: float, sucursal: Sucursal) -> bool:
         for ingrediente in producto.obtenerReceta():
             necesidadTotal = cantidadProducida * ingrediente.obtenerCantidadUsada()
             inventarioMP = sucursal.buscarInventarioMateriaPrima(ingrediente.obtenerIdMateriaPrima())
@@ -23,7 +22,7 @@ class Produccion:
             if not inventarioMP.validarStockSuficente(necesidadTotal):
                 return False
         return True
-    
+        
     def calcularTotalProducido(self) -> float:
         return sum(d.obtenerCantidadProducida() for d in self._detallesDeProduccion)
     
