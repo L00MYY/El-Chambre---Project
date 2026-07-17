@@ -12,6 +12,10 @@ class Produccion:
         #Una cabecera Produccion compone VARIOS DetalleProduccion
         self._detallesDeProduccion: list[DetalleProduccion] = []
 
+    def agregarDetalleProduccion(self, detalle: DetalleProduccion):
+        if detalle.obtenerCantidadProducida() <= 0:
+            raise ValueError("La cantidad producida debe ser mayor a 0")
+        self._detallesDeProduccion.append(detalle)
 
     def validarMateriaPrima(self, producto: Producto, cantidadProducida: float, sucursal: Sucursal) -> bool:
         for ingrediente in producto.obtenerReceta():
