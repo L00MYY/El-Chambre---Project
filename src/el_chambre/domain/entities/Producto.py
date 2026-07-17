@@ -37,3 +37,12 @@ class Producto:
 
     def calcularCostoProduccion(self):
         pass
+    
+    def calcularCostoProduccion(self, catalogoMateriaPrima: dict) -> float:
+        costoTotal = 0.0
+        for ingrediente in self.__receta:
+            mp = catalogoMateriaPrima.get(ingrediente.obtenerIdMateriaPrima())
+            if mp is None:
+                raise ValueError("Materia prima no encontrada en el catálogo")
+        costoTotal += ingrediente.obtenerCantidadUsada() * mp.costoUnitario
+        return costoTotal

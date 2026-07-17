@@ -5,4 +5,4 @@ class DetalleProduccion:
         self._cantidadProducida = cantidadProducida
 
     def obtenerCantidadProducida(self) -> float:
-        pass
+        return self._cantidadProducida

@@ -14,13 +14,16 @@ class Sucursal:
         self._inventarioMateriaPrima: list[InventarioMateriaPrima] = []
 
     def agregarInventarioMateriaPrima(self, inventario: InventarioMateriaPrima):
-        pass
+        self._inventarioMateriaPrima.append(inventario)
 
     def agregarInventarioProducto(self, inventario: InventarioProducto):
         self._inventarioProductos.append(inventario)
 
-    def buscarInventarioMateriaPrima(self, idMateriaPrima: int) -> InventarioMateriaPrima | None:
-        pass
+    def buscarInventarioMateriaPrima(self, idMateriaPrima: int) ->  InventarioMateriaPrima | None:
+        for inventario in self._inventarioMateriaPrima:
+            if inventario.idMateriaPrima == idMateriaPrima:
+                return inventario
+        return None
 
     def buscarInventarioProducto(self, idProducto: int) -> InventarioProducto | None:
         for inventario in self._inventarioProductos:
@@ -28,5 +31,8 @@ class Sucursal:
                 return inventario
         return None
 
-    def obtenerInventario(self):
-        pass
+    def obtenerInventario(self) -> dict:
+        return {
+            "productos": self._inventarioProductos,
+            "materiaPrima": self._inventarioMateriaPrima,
+        }
