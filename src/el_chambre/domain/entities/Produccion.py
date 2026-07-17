@@ -27,27 +27,27 @@ class Produccion:
     def calcularTotalProducido(self) -> float:
         return sum(d.obtenerCantidadProducida() for d in self._detallesDeProduccion)
     
-def registrarProduccion(self, productos: list[Producto], sucursal: Sucursal):
-    """Transacción inversa a la venta: se consume  la materia prima y acredita el producto terminado"""
-    #  1: validar  antes de tocar nada
-    for detalle in self._detallesDeProduccion:
-        producto = next((p for p in productos if p.idProducto == detalle.idProducto), None)
-        if producto is None:
-            raise ValueError("Producto no encontrado")
-        if not self.validarMateriaPrima(producto, detalle.obtenerCantidadProducida(), sucursal):
-            raise ValueError(f"No hay suficiente materia prima para producir {producto.nombre}")
+    def registrarProduccion(self, productos: list[Producto], sucursal: Sucursal):
+        """Transacción inversa a la venta: se consume  la materia prima y acredita el producto terminado"""
+        #  1: validar  antes de tocar nada
+        for detalle in self._detallesDeProduccion:
+            producto = next((p for p in productos if p.idProducto == detalle.idProducto), None)
+            if producto is None:
+                raise ValueError("Producto no encontrado")
+            if not self.validarMateriaPrima(producto, detalle.obtenerCantidadProducida(), sucursal):
+                raise ValueError(f"No hay suficiente materia prima para producir {producto.nombre}")
 
-    #  2: solo si pasó la validación, se aplican los movimientos
-    for detalle in self._detallesDeProduccion:
-        producto = next(p for p in productos if p.idProducto == detalle.idProducto)
-        cantidadProducida = detalle.obtenerCantidadProducida()
+        #  2: solo si pasó la validación, se aplican los movimientos
+        for detalle in self._detallesDeProduccion:
+            producto = next(p for p in productos if p.idProducto == detalle.idProducto)
+            cantidadProducida = detalle.obtenerCantidadProducida()
 
-        for ingrediente in producto.obtenerReceta():
-            necesidadTotal = cantidadProducida * ingrediente.obtenerCantidadUsada()
-            inventarioMP = sucursal.buscarInventarioMateriaPrima(ingrediente.obtenerIdMateriaPrima())
-            inventarioMP.actualizarStock(-necesidadTotal)
+            for ingrediente in producto.obtenerReceta():
+                necesidadTotal = cantidadProducida * ingrediente.obtenerCantidadUsada()
+                inventarioMP = sucursal.buscarInventarioMateriaPrima(ingrediente.obtenerIdMateriaPrima())
+                inventarioMP.actualizarStock(-necesidadTotal)
 
-        inventarioProd = sucursal.buscarInventarioProducto(detalle.idProducto)
-        if inventarioProd is None:
-            raise ValueError("No existe inventario de producto en esta sucursal")
-        inventarioProd.actualizarStock(cantidadProducida)
+            inventarioProd = sucursal.buscarInventarioProducto(detalle.idProducto)
+            if inventarioProd is None:
+                raise ValueError("No existe inventario de producto en esta sucursal")
+            inventarioProd.actualizarStock(cantidadProducida)
