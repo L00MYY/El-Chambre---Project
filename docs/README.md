@@ -2,10 +2,13 @@
 
 Carpeta para documentos de apoyo del proyecto.
 
-Contenido sugerido:
+## Diagramas vigentes
 
-- diagramas de base de datos en `docs/diagrams/`
+- `diagrams/uml-dominio.pdf`: entidades, atributos, comportamientos y relaciones del dominio.
+- `diagrams/diagrama-relacional-sqlite.pdf`: tablas, columnas, claves y relaciones del esquema creado por `scripts/init_db.py`.
+
+## Contenido futuro
+
 - notas de arquitectura
 - capturas o evidencias de funcionamiento
 - guía breve de endpoints cuando se agregue la API
-
