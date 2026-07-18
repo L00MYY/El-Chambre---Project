@@ -41,5 +41,5 @@ class Producto:
             mp = catalogoMateriaPrima.get(ingrediente.obtenerIdMateriaPrima())
             if mp is None:
                 raise ValueError("Materia prima no encontrada en el catálogo")
-        costoTotal += ingrediente.obtenerCantidadUsada() * mp.costoUnitario
+            costoTotal += ingrediente.obtenerCantidadUsada() * mp.costoUnitario
         return costoTotal

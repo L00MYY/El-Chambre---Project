@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from sqlite3 import Connection
+from types import TracebackType
 
 from el_chambre.application.interfaces.repositories import AbstractUnitOfWork
 from el_chambre.infrastructure.db import get_connection
@@ -44,18 +45,16 @@ class SqliteUnitOfWork(AbstractUnitOfWork):
         self,
         exc_type: type[BaseException] | None,
         exc_value: BaseException | None,
-        traceback: type[BaseException] | None,
+        traceback: TracebackType | None,
     ) -> None:
         if self._connection is None:
             return
 
-        if exc_type:
+        try:
             self._connection.rollback()
-        else:
-            self._connection.commit()
-
-        self._connection.close()
-        self._connection = None
+        finally:
+            self._connection.close()
+            self._connection = None
 
     def commit(self) -> None:
         if self._connection is None:
