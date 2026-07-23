@@ -1,0 +1,5 @@
+$kind: http-request
+name: Obtener Producción
+method: GET
+url: '{{base_url}}/producciones/{{id_produccion}}'
+order: 3000

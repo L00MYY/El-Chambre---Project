@@ -1,0 +1,26 @@
+$kind: http-request
+name: Crear Sucursal
+method: POST
+url: '{{base_url}}/sucursales'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Sucursal Central",
+      "direccion": "Calle Principal 123",
+      "telefono": "22001234"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Sucursal creada", function () {
+          pm.response.to.have.status(201);
+      });
+      pm.environment.set(
+          "id_sucursal",
+          pm.response.json().data.id_sucursal
+      );

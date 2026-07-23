@@ -1,0 +1,28 @@
+$kind: http-request
+name: Registrar Venta
+method: POST
+url: '{{base_url}}/ventas'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id_sucursal": {{id_sucursal}},
+      "metodo_pago": "efectivo",
+      "detalles": [
+        {"id_producto": {{id_producto}}, "cantidad": 5}
+      ]
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Venta registrada", function () {
+          pm.response.to.have.status(201);
+      });
+      pm.environment.set(
+          "id_venta",
+          pm.response.json().data.venta.id_venta
+      );

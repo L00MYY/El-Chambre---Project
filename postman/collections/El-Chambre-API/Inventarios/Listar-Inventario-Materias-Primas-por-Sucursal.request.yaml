@@ -1,0 +1,5 @@
+$kind: http-request
+name: Listar Inventario Materias Primas por Sucursal
+method: GET
+url: '{{base_url}}/sucursales/{{id_sucursal}}/inventarios/materias-primas'
+order: 8000

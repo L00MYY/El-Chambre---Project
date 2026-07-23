@@ -1,0 +1,16 @@
+$kind: http-request
+name: Actualizar Producto
+method: PUT
+url: '{{base_url}}/productos/{{id_producto}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Pan de prueba actualizado",
+      "precio": 0.75,
+      "descripcion": "Producto actualizado desde Postman"
+    }

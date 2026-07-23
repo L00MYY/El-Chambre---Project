@@ -1,0 +1,17 @@
+$kind: http-request
+name: Crear Inventario Producto
+method: POST
+url: '{{base_url}}/inventarios/productos'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id_sucursal": {{id_sucursal}},
+      "id_producto": {{id_producto}},
+      "stock_inicial": 10,
+      "stock_minimo": 5
+    }

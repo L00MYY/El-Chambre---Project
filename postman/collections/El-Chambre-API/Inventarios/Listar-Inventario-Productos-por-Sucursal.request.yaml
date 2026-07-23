@@ -1,0 +1,5 @@
+$kind: http-request
+name: Listar Inventario Productos por Sucursal
+method: GET
+url: '{{base_url}}/sucursales/{{id_sucursal}}/inventarios/productos'
+order: 7000

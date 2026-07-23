@@ -1,0 +1,27 @@
+$kind: http-request
+name: Registrar Producción
+method: POST
+url: '{{base_url}}/producciones'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id_sucursal": {{id_sucursal}},
+      "id_producto": {{id_producto}},
+      "cantidad": 10,
+      "observacion": "Producción matutina"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Producción registrada", function () {
+          pm.response.to.have.status(201);
+      });
+      pm.environment.set(
+          "id_produccion",
+          pm.response.json().data.produccion.id_produccion
+      );

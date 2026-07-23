@@ -1,0 +1,27 @@
+$kind: http-request
+name: Crear Materia Prima
+method: POST
+url: '{{base_url}}/materias-primas'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Harina de prueba",
+      "unidad_medida": "kg",
+      "costo_unitario": 1.50,
+      "descripcion": "Materia prima creada desde Postman"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Materia prima creada", function () {
+          pm.response.to.have.status(201);
+      });
+      pm.environment.set(
+          "id_materia",
+          pm.response.json().data.id_materia
+      );

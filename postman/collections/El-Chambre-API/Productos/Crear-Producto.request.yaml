@@ -1,0 +1,26 @@
+$kind: http-request
+name: Crear Producto
+method: POST
+url: '{{base_url}}/productos'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Pan de prueba",
+      "precio": 0.50,
+      "descripcion": "Producto creado desde Postman"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Producto creado", function () {
+          pm.response.to.have.status(201);
+      });
+      pm.environment.set(
+          "id_producto",
+          pm.response.json().data.id_producto
+      );

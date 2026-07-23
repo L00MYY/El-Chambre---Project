@@ -1,0 +1,5 @@
+$kind: http-request
+name: Listar Materias Primas
+method: GET
+url: '{{base_url}}/materias-primas'
+order: 2000

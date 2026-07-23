@@ -1,0 +1,5 @@
+$kind: http-request
+name: Obtener Venta
+method: GET
+url: '{{base_url}}/ventas/{{id_venta}}'
+order: 3000

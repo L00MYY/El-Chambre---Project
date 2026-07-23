@@ -1,0 +1,5 @@
+$kind: http-request
+name: Obtener Producto
+method: GET
+url: '{{base_url}}/productos/{{id_producto}}'
+order: 3000

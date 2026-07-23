@@ -1,0 +1,16 @@
+$kind: http-request
+name: Actualizar Sucursal
+method: PUT
+url: '{{base_url}}/sucursales/{{id_sucursal}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Sucursal Central",
+      "direccion": "Calle Principal 123",
+      "telefono": "22001234"
+    }

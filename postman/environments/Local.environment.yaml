@@ -1,0 +1,26 @@
+name: Local
+values:
+  - key: base_url
+    value: 'http://localhost:5000'
+    enabled: true
+    type: default
+  - key: id_sucursal
+    value: '1'
+    enabled: true
+    type: default
+  - key: id_producto
+    value: '1'
+    enabled: true
+    type: default
+  - key: id_materia
+    value: '1'
+    enabled: true
+    type: default
+  - key: id_venta
+    value: '1'
+    enabled: true
+    type: default
+  - key: id_produccion
+    value: '1'
+    enabled: true
+    type: default

@@ -1,0 +1,5 @@
+$kind: http-request
+name: Obtener Materia Prima
+method: GET
+url: '{{base_url}}/materias-primas/{{id_materia}}'
+order: 3000

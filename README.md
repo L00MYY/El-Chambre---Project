@@ -1,42 +1,62 @@
-# El Chambre - Project
+# El Chambre
 
-Aplicación demo para apoyar la gestión de inventario, ventas y producción de la panadería **El Chambre**.
+API local para administrar inventario, recetas, producción y ventas de una
+panadería. Utiliza Python, Flask y SQLite.
 
-El objetivo del proyecto es mantener una separación sencilla entre dominio, aplicación, infraestructura y futuras entradas externas como consola o API.
+## Requisitos
 
-## Estructura del proyecto
-
-```text
-src/
-└── el_chambre/
-    ├── api/
-    ├── application/
-    ├── domain/
-    └── infrastructure/
-
-scripts/
-docs/
-tests/
-```
-
-## Carpetas principales
-
-- `src/el_chambre/domain/`: entidades y reglas centrales del negocio.
-- `src/el_chambre/application/`: servicios de aplicación y contratos de repositorios.
-- `src/el_chambre/infrastructure/`: conexión a base de datos e implementación de repositorios.
-- `src/el_chambre/api/`: espacio reservado para exponer funcionalidad mediante API.
-- `scripts/`: comandos auxiliares, como carga inicial de datos.
-- `docs/`: diagramas, notas de arquitectura y documentación de apoyo.
-- `tests/`: pruebas y manuales de validación.
+- Python 3.10 o superior
+- Postman CLI, únicamente para ejecutar la colección
 
 ## Instalación
 
-```bash
-pip install -r requirements.txt
+```powershell
+git clone https://github.com/L00MYY/El-Chambre---Project.git
+cd El-Chambre---Project
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 ```
 
-## Setup de la base de datos local
+## Base de datos
 
-```bash
-python scripts/init_db.py
+Crear una base vacía:
+
+```powershell
+python scripts\init_db.py
+```
+
+O reconstruirla con datos de demostración:
+
+```powershell
+python scripts\seed_db.py --reset
+```
+
+## Ejecutar la API
+
+```powershell
+$env:PYTHONPATH="$PWD\src"
+python -m flask --app el_chambre.api.app run
+```
+
+La API estará disponible en `http://localhost:5000`.
+
+## Colección Postman
+
+```powershell
+postman collection lint postman/collections/El-Chambre-API
+postman collection run postman/collections/El-Chambre-API `
+  -e postman/environments/Local.environment.yaml `
+  --bail
+```
+
+La guía breve se encuentra en [`postman/README.md`](postman/README.md).
+
+## Estructura
+
+```text
+src/el_chambre/   dominio, aplicación, infraestructura y API
+scripts/          inicialización, reinicio y datos demo
+postman/          colección ejecutable
+docs/diagrams/    diagramas del proyecto
 ```

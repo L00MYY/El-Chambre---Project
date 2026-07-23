@@ -1,0 +1,17 @@
+$kind: http-request
+name: Actualizar Materia Prima
+method: PUT
+url: '{{base_url}}/materias-primas/{{id_materia}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Harina de prueba actualizada",
+      "unidad_medida": "kg",
+      "costo_unitario": 2.00,
+      "descripcion": "Materia prima actualizada desde Postman"
+    }

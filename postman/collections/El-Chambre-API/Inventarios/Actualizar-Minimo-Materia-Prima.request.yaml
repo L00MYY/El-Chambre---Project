@@ -1,0 +1,16 @@
+$kind: http-request
+name: Actualizar Mínimo Materia Prima
+method: PATCH
+url: '{{base_url}}/inventarios/materias-primas/minimo'
+order: 6000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id_sucursal": {{id_sucursal}},
+      "id_materia": {{id_materia}},
+      "stock_minimo": 5
+    }

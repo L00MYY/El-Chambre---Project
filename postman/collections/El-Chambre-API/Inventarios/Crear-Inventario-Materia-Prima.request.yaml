@@ -1,0 +1,17 @@
+$kind: http-request
+name: Crear Inventario Materia Prima
+method: POST
+url: '{{base_url}}/inventarios/materias-primas'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id_sucursal": {{id_sucursal}},
+      "id_materia": {{id_materia}},
+      "stock_inicial": 50,
+      "stock_minimo": 5
+    }

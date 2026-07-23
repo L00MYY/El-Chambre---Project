@@ -1,0 +1,10 @@
+$kind: http-request
+name: Listar Producciones
+method: GET
+url: '{{base_url}}/producciones'
+order: 2000
+queryParams:
+  - key: id_sucursal
+    value: ''
+    disabled: true
+    description: Optional integer filter by branch

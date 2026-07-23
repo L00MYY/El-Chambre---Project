@@ -1,0 +1,12 @@
+$kind: collection
+name: El Chambre API
+description: Colección ejecutable de la API local de El Chambre.
+variables:
+  - key: base_url
+    value: 'http://localhost:5000'
+scripts:
+  - type: http:afterResponse
+    code: |-
+      pm.test("La solicitud fue exitosa", function () {
+          pm.expect(pm.response.code).to.be.below(400);
+      });

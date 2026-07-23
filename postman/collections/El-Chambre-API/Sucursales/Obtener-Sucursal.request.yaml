@@ -1,0 +1,5 @@
+$kind: http-request
+name: Obtener Sucursal
+method: GET
+url: '{{base_url}}/sucursales/{{id_sucursal}}'
+order: 3000

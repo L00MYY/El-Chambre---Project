@@ -1,0 +1,5 @@
+$kind: http-request
+name: Listar Sucursales
+method: GET
+url: '{{base_url}}/sucursales'
+order: 2000

@@ -1,0 +1,5 @@
+$kind: http-request
+name: Eliminar Receta
+method: DELETE
+url: '{{base_url}}/productos/{{id_producto}}/receta'
+order: 3000
