@@ -651,14 +651,16 @@ class SqliteVentaRepository(VentaRepository):
             """,
             (id_venta,),
         )
-        return [
-            DetalleVenta(
+        detalles = []
+        for row in cursor.fetchall():
+            detalle = DetalleVenta(
                 row["id_det_venta"],
                 row["id_producto"],
                 row["cantidad"],
             )
-            for row in cursor.fetchall()
-        ]
+            detalle._subtotal = row["subtotal"]
+            detalles.append(detalle)
+        return detalles
 
 
 class SqliteProduccionRepository(ProduccionRepository):

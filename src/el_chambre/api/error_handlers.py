@@ -12,7 +12,14 @@ from el_chambre.application.exceptions.exceptions import (
 def register_error_handlers(app):
     @app.errorhandler(ValidationError)
     @app.errorhandler(ValueError)
+    @app.errorhandler(TypeError)
+    @app.errorhandler(KeyError)
     def handle_validation_error(error):
+        if isinstance(error, KeyError):
+            return (
+                jsonify({"error": f"Falta el campo obligatorio: {error.args[0]}"}),
+                400,
+            )
         return jsonify({"error": str(error)}), 400
 
     @app.errorhandler(NotFoundError)
