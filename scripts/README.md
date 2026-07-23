@@ -23,3 +23,19 @@ Para pruebas automatizadas o scripts puede omitirse la confirmación:
 ```bash
 python scripts/reset_db.py --yes
 ```
+
+## Cargar datos de demostración
+
+El seed crea sucursales, productos, materias primas, inventarios, recetas,
+una producción y ventas de ejemplo:
+
+```bash
+python scripts/seed_db.py
+```
+
+Si la base ya contiene información, el script no agrega duplicados. Para
+reconstruirla y reemplazar su contenido por la demo:
+
+```bash
+python scripts/seed_db.py --reset
+```
