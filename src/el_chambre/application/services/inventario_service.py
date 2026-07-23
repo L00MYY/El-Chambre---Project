@@ -1,16 +1,13 @@
 """
-InventarioService — Integrante 1, Tarea 2.
-
 Gestiona inventarios iniciales, entradas/salidas manuales, stocks mínimos,
 consultas de existencias y alertas.
 
 No escribe SQL, no abre conexiones directamente: todo pasa por una
 Unidad de Trabajo obtenida de `uow_factory`.
 
-Recordatorio de la regla transaccional del documento: este servicio es
-SOLO para ajustes manuales. VentaService y ProduccionService no deben
-llamarlo — ellos modifican inventarios dentro de su propia unidad de
-trabajo para no partir la transacción en dos.
+Este servicio se utiliza para ajustes manuales. VentaService y
+ProduccionService modifican los inventarios dentro de su propia unidad de
+trabajo para conservar la atomicidad de cada operación.
 """
 
 from el_chambre.application.exceptions.exceptions import (

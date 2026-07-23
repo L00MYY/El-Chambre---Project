@@ -2,7 +2,7 @@
 Excepciones propias de la capa de aplicación (application/).
 
 Estas excepciones NO conocen códigos HTTP ni nada de Flask.
-La capa api/ es la responsable de traducirlas más adelante:
+La capa api/ las traduce a respuestas HTTP:
 
     ValidationError        -> 400
     NotFoundError           -> 404

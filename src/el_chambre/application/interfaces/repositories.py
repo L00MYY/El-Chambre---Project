@@ -315,8 +315,8 @@ class AbstractUnitOfWork(ABC):
     """
     Contrato para coordinar repositorios dentro de una transacción.
 
-    La implementación concreta será responsabilidad de infraestructura,
-    por ejemplo, mediante una clase SqliteUnitOfWork.
+    La implementación concreta pertenece a infraestructura y se encuentra
+    disponible mediante SqliteUnitOfWork.
     """
 
     sucursales: SucursalRepository
