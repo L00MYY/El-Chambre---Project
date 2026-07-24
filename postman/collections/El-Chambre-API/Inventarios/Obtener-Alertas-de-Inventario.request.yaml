@@ -2,4 +2,5 @@ $kind: http-request
 name: Obtener Alertas de Inventario
 method: GET
 url: '{{base_url}}/sucursales/{{id_sucursal}}/alertas'
+examples: .resources/Obtener-Alertas-de-Inventario.resources/examples
 order: 9000

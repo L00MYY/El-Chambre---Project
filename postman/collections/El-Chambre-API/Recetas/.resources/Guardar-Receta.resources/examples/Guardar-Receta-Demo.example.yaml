@@ -1,0 +1,32 @@
+$kind: http-example
+name: Demo
+request:
+  method: PUT
+  url: '{{base_url}}/productos/{{id_producto}}/receta'
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "ingredientes": [
+          {"id_materia": 1, "cantidad_usada": 0.2}
+        ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "data": [
+          {
+            "cantidad_usada": 0.2,
+            "id_detalle_receta": 0,
+            "id_materia": 1
+          }
+        ]
+      }

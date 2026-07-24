@@ -27,3 +27,6 @@ postman collection run postman/collections/El-Chambre-API `
 
 Los archivos `*.request.yaml` contienen las solicitudes y pruebas. La colección
 crea sus datos y guarda los identificadores en el ambiente local.
+
+Las solicitudes representativas incluyen un ejemplo `Demo` con datos y respuesta
+precargados para abrirlo y ejecutarlo desde Postman.

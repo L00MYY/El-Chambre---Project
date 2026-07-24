@@ -1,0 +1,21 @@
+$kind: http-example
+name: Demo
+request:
+  method: GET
+  url: '{{base_url}}/sucursales/{{id_sucursal}}'
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "data": {
+          "direccion": "Calle principal, San Salvador",
+          "id_sucursal": 1,
+          "nombre": "Sucursal Centro",
+          "telefono": "2222-1000"
+        }
+      }

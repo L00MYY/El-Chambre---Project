@@ -1,11 +1,11 @@
 $kind: http-request
 name: Crear Sucursal
 method: POST
-url: '{{base_url}}/sucursales'
+url: "{{base_url}}/sucursales"
+examples: .resources/Crear-Sucursal.resources/examples
 order: 1000
 headers:
-  - key: Content-Type
-    value: application/json
+  Content-Type: application/json
 body:
   type: json
   content: |-

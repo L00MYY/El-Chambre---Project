@@ -1,0 +1,50 @@
+$kind: http-example
+name: Demo
+request:
+  method: POST
+  url: '{{base_url}}/producciones'
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "id_sucursal": 1,
+        "id_producto": 1,
+        "cantidad": 10,
+        "observacion": "Produccion de demostracion"
+      }
+response:
+  statusCode: 201
+  statusText: CREATED
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "data": {
+          "alertas_materias_primas": [
+            {
+              "en_alerta": true,
+              "id_inventario": 2,
+              "id_materia": 2,
+              "stock_actual": 3.7,
+              "stock_minimo": 5
+            }
+          ],
+          "produccion": {
+            "detalles": [
+              {
+                "cantidad_producida": 10,
+                "id_detalle_produccion": 0,
+                "id_producto": 1
+              }
+            ],
+            "fecha": "2026-07-24",
+            "id_produccion": 2,
+            "id_sucursal": 1,
+            "observacion": "Produccion de demostracion"
+          }
+        }
+      }

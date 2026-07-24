@@ -1,0 +1,17 @@
+$kind: http-example
+name: Demo
+request:
+  method: GET
+  url: '{{base_url}}/'
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "aplicacion": "El Chambre",
+        "mensaje": "API de inventario funcionando"
+      }

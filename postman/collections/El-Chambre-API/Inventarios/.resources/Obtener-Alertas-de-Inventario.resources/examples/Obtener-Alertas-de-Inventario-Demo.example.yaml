@@ -1,0 +1,27 @@
+$kind: http-example
+name: Demo
+request:
+  method: GET
+  url: '{{base_url}}/sucursales/{{id_sucursal}}/alertas'
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "data": {
+          "materias_primas": [
+            {
+              "en_alerta": true,
+              "id_inventario": 2,
+              "id_materia": 2,
+              "stock_actual": 3.7,
+              "stock_minimo": 5
+            }
+          ],
+          "productos": []
+        }
+      }

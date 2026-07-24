@@ -2,6 +2,7 @@ $kind: http-request
 name: Crear Materia Prima
 method: POST
 url: '{{base_url}}/materias-primas'
+examples: .resources/Crear-Materia-Prima.resources/examples
 order: 1000
 headers:
   - key: Content-Type

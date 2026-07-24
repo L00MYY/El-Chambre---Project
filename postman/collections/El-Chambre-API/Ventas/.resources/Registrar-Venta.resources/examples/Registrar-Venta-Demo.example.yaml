@@ -1,0 +1,45 @@
+$kind: http-example
+name: Demo
+request:
+  method: POST
+  url: '{{base_url}}/ventas'
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "id_sucursal": 1,
+        "metodo_pago": "efectivo",
+        "detalles": [
+          {"id_producto": 1, "cantidad": 5}
+        ]
+      }
+response:
+  statusCode: 201
+  statusText: CREATED
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "data": {
+          "alertas_productos": [],
+          "venta": {
+            "detalles": [
+              {
+                "cantidad": 5,
+                "id_detalle_venta": 0,
+                "id_producto": 1,
+                "subtotal": 1.25
+              }
+            ],
+            "fecha": "2026-07-24",
+            "id_sucursal": 1,
+            "id_venta": 3,
+            "metodo_pago": "efectivo",
+            "total": 1.25
+          }
+        }
+      }

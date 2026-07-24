@@ -2,6 +2,7 @@ $kind: http-request
 name: Registrar Venta
 method: POST
 url: '{{base_url}}/ventas'
+examples: .resources/Registrar-Venta.resources/examples
 order: 1000
 headers:
   - key: Content-Type

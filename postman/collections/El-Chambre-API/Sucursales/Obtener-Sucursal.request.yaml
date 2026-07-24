@@ -1,5 +1,6 @@
 $kind: http-request
 name: Obtener Sucursal
 method: GET
-url: '{{base_url}}/sucursales/{{id_sucursal}}'
+url: "{{base_url}}/sucursales/{{id_sucursal}}"
+examples: .resources/Obtener-Sucursal.resources/examples
 order: 3000

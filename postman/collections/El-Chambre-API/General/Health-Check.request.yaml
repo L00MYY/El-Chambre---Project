@@ -2,4 +2,5 @@ $kind: http-request
 name: Health Check
 method: GET
 url: '{{base_url}}/'
+examples: .resources/Health-Check.resources/examples
 order: 1000

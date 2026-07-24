@@ -1,0 +1,31 @@
+$kind: http-example
+name: Demo
+request:
+  method: POST
+  url: '{{base_url}}/sucursales'
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "nombre": "Sucursal Demo",
+        "direccion": "Avenida Demo 100",
+        "telefono": "22000000"
+      }
+response:
+  statusCode: 201
+  statusText: CREATED
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "data": {
+          "direccion": "Avenida Demo 100",
+          "id_sucursal": 3,
+          "nombre": "Sucursal Demo",
+          "telefono": "22000000"
+        }
+      }

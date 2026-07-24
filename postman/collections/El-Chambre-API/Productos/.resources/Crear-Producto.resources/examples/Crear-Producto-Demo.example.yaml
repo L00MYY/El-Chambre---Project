@@ -1,0 +1,32 @@
+$kind: http-example
+name: Demo
+request:
+  method: POST
+  url: '{{base_url}}/productos'
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "nombre": "Pan de prueba",
+        "precio": 0.50,
+        "descripcion": "Producto creado desde Postman"
+      }
+response:
+  statusCode: 201
+  statusText: CREATED
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "data": {
+          "descripcion": "Producto creado desde Postman",
+          "id_producto": 4,
+          "nombre": "Pan de prueba",
+          "precio": 0.5,
+          "receta": []
+        }
+      }

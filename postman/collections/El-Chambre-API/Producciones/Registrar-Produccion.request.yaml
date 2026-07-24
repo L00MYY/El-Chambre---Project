@@ -2,6 +2,7 @@ $kind: http-request
 name: Registrar Producción
 method: POST
 url: '{{base_url}}/producciones'
+examples: .resources/Registrar-Produccion.resources/examples
 order: 1000
 headers:
   - key: Content-Type

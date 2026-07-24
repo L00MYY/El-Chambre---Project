@@ -1,0 +1,33 @@
+$kind: http-example
+name: Demo
+request:
+  method: POST
+  url: '{{base_url}}/materias-primas'
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "nombre": "Harina de prueba",
+        "unidad_medida": "kg",
+        "costo_unitario": 1.50,
+        "descripcion": "Materia prima creada desde Postman"
+      }
+response:
+  statusCode: 201
+  statusText: CREATED
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "data": {
+          "costo_unitario": 1.5,
+          "descripcion": "Materia prima creada desde Postman",
+          "id_materia": 5,
+          "nombre": "Harina de prueba",
+          "unidad_medida": "kg"
+        }
+      }

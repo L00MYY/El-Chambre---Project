@@ -2,6 +2,7 @@ $kind: http-request
 name: Crear Producto
 method: POST
 url: '{{base_url}}/productos'
+examples: .resources/Crear-Producto.resources/examples
 order: 1000
 headers:
   - key: Content-Type
